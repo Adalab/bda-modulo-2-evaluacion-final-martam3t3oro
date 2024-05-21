@@ -1,3 +1,5 @@
+EVALUACIÓN MÓDULO 2
+
 # Título del Proyecto
 
 En este proyecto se resuelven 25 ejercicios relacionados con la BBDD Sakila 
@@ -48,7 +50,7 @@ Descripción: Realizamos un JOIN entre las tablas customer y rental y utilizamos
 
 11. Encontrar la cantidad total de películas alquiladas por categoría y mostrar el nombre de la categoría junto con el recuento de alquileres.
 
-Descripción: Utilizamos una SUBCONSULTA para combinar las tablas category, film_category, film, inventory, y rental para obtener los datos que nos piden.
+Descripción: Empleamos las cláusulas INNER JOIN, COUNT, GROUP BY y ORDER BY en una consulta SQL para contar los alquileres por categoría.
 
 12. Encontrar el promedio de duración de las películas para cada clasificación de la tabla film y mostrar la clasificación junto con el promedio de duración.
 
@@ -72,7 +74,7 @@ Descripción: Utilizamos BETWEEN para seleccionar películas lanzadas entre 2005
 
 17. Encontrar el título de todas las películas que son de la misma categoría que "Family".
 
-Descripción: Realizamos un JOIN entre film_category y category para encontrar las películas de la categoría "Family".
+Descripción: Realizamos un JOIN entre film_category y category y una sencilla subconsulta dentro de WHERE para encontrar las películas de la categoría "Family".
 
 18. Mostrar el nombre y apellido de los actores que aparecen en más de 10 películas.
 

@@ -93,21 +93,19 @@ ORDER BY
    total_rents DESC;
 
 -- 11. Encuentra la cantidad total de películas alquiladas por categoría y muestra el nombre de la categoría junto con el recuento de alquileres.
-# Empleo de una SUBCONSULTA para combinar las tablas category, film_category, film, inventory, y rental para obtener los datos que nos piden.
+# Empleo de las cláusulas INNER JOIN, COUNT, GROUP BY y ORDER BY en una consulta SQL para contar los alquileres por categoría.
 
 SELECT 
     c.name AS category_name,
-    (
-        SELECT COUNT(*)
-        FROM film f
-        WHERE f.film_id IN (
-            SELECT film_id
-            FROM film_category
-            WHERE category_id = c.category_id
-        )
-    ) AS total_rents
+    COUNT(r.rental_id) AS total_rents
 FROM 
     category c
+    INNER JOIN film_category fc ON c.category_id = fc.category_id
+    INNER JOIN film f ON fc.film_id = f.film_id
+    INNER JOIN inventory i ON f.film_id = i.film_id
+    INNER JOIN rental r ON i.inventory_id = r.inventory_id
+GROUP BY 
+    c.name
 ORDER BY 
     total_rents DESC;
 
@@ -174,7 +172,7 @@ WHERE
     release_year BETWEEN 2005 AND 2010;
     
 -- 17. Encuentra el título de todas las películas que son de la misma categoría que "Family".
-# Realización de un JOIN entre film_category y category para encontrar las películas de la categoría "Family".
+# Realización de un JOIN entre film_category y category y una subconsulta dentro de WHERE para encontrar las películas de la categoría "Family".
 
 SELECT 
     f.title
