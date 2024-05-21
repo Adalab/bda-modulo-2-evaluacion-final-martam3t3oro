@@ -1,6 +1,4 @@
-EVALUACIÓN MÓDULO 2
-
-# Título del Proyecto
+# EVALUACIÓN MÓDULO 2
 
 En este proyecto se resuelven 25 ejercicios relacionados con la BBDD Sakila 
 Esta base de datos de ejemplo simula una tienda de alquiler de películas. 
